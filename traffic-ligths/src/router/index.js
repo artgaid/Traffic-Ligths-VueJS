@@ -24,7 +24,11 @@ const routes = [
     path: '/green',
     name: 'Green',
     component: () => import(/* webpackChunkName: "red" */ '../views/Green.vue')
-  }
+  },
+  {
+    path: '*',
+    component: () => import(/* webpackChunkName: "error" */ '../views/Page404.vue')
+}
 ]
 
 const router = new VueRouter({
