@@ -1,34 +1,55 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/red">Red</router-link> |
-      <router-link to="/yellow">Yellow</router-link> |
-      <router-link to="/green">Green</router-link> 
-    </div>
-    <router-view/>
-  </div>
+  <v-app>
+    <v-app-bar
+      app
+      color="teal lighten-4"
+      class="d-flex justify-center"
+    >
+        <v-btn
+          to="/red"
+          class="mr-2"
+          color="red"
+          elevation="1"
+          rounded
+          outlined
+        > 
+        Red</v-btn>
+
+        <v-btn
+          to="/yellow"
+          class="mr-2"
+          color="yellow"
+          elevation="1"
+          rounded
+          outlined
+          dark
+        > 
+        Yellow</v-btn>
+        
+        <v-btn
+          to="/green"
+          class="mr-2"
+          color="green"
+          elevation="1"
+          rounded
+          outlined
+        > 
+        Green</v-btn>
+    </v-app-bar>
+
+    <v-main>
+      <router-view/>
+    </v-main>
+  </v-app>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
 
-#nav {
-  padding: 30px;
+export default {
+  name: 'App',
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
-</style>
+  data: () => ({
+    //
+  }),
+};
+</script>
